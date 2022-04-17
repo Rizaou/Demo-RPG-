@@ -7,18 +7,20 @@ using System;
 public class Mover : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Animator _animator;
     // [SerializeField] private Transform _target;
 
     private Ray _lastRay;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             MoveToCursor();
 
         }
 
+        _animator.SetFloat("forwardSpeed",Mathf.Abs(transform.InverseTransformDirection(_agent.velocity).z));
 
     }
 
