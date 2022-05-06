@@ -27,7 +27,7 @@ namespace RPG.Controller
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        GetComponent<Fighter>().Fight(target);
+                        GetComponent<Fighter>().Attack(target);
                     }
                     return true;
 

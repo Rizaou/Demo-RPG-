@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
 
@@ -33,8 +34,9 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.position) < weaponRange;
         }
 
-        public void Fight(CombatTarget target)
+        public void Attack(CombatTarget target)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
             this.target = target.transform;
 
         }

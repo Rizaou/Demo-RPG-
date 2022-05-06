@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using UnityEngine;
 using System;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Movement
 {
@@ -37,21 +38,22 @@ namespace RPG.Movement
 
         public void Stop()
         {
-            
+
             _agent.isStopped = true;
             _agent.ResetPath();
         }
 
         public void StartMoveAction(Vector3 point)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Fighter>().Cancel();
             MoveTo(point);
         }
         public void MoveTo(Vector3 point)
-        { 
-              _agent.ResetPath();
+        {
+            _agent.ResetPath();
             _agent.SetDestination(point);
-              _agent.isStopped = false;
+            _agent.isStopped = false;
         }
     }
 
