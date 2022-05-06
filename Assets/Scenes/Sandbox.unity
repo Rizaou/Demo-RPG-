@@ -3037,6 +3037,7 @@ GameObject:
   - component: {fileID: 1689318379}
   - component: {fileID: 1689318378}
   - component: {fileID: 1689318377}
+  - component: {fileID: 1689318381}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -3052,8 +3053,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689318376}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -3115,13 +3116,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689318376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.93794, y: -0.07, z: 92.98}
-  m_LocalScale: {x: 2.3347, y: 2.3347, z: 2.3347}
+  m_LocalPosition: {x: 67.93794, y: -0.07, z: 81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1689318381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689318376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37a301c61a579846957ba86a31f2fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1702411029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3475,6 +3488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1599509181, guid: 7020f367b88fa164db38750a3070d644, type: 3}
+      propertyPath: weaponRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 62997696657395145, guid: 7020f367b88fa164db38750a3070d644,
         type: 3}
       propertyPath: m_Name
@@ -3535,11 +3552,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8402565248758199417, guid: 7020f367b88fa164db38750a3070d644,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7020f367b88fa164db38750a3070d644, type: 3}
 --- !u!1001 &3360127960325426727
