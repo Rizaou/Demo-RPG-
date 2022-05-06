@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 62997696657395155}
   - component: {fileID: 62997696657395149}
   - component: {fileID: 62997696657395151}
+  - component: {fileID: 6094125745889078071}
   - component: {fileID: 62997696657395144}
   - component: {fileID: 1599509180}
   - component: {fileID: 1599509181}
@@ -85,6 +86,26 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &6094125745889078071
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62997696657395145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+  m_Controller: {fileID: 9100000, guid: 85e5778df199bee47b6e5c3ab2dfa438, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &62997696657395144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af680b1075ea694abd490d724e8360f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 8402565248758199417}
+  _animator: {fileID: 6094125745889078071}
 --- !u!114 &1599509180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,7 +1577,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8402565248758199416}
-  - component: {fileID: 8402565248758199417}
   m_Layer: 0
   m_Name: Character_Knights_Soldier_02
   m_TagString: Untagged
@@ -1582,26 +1602,6 @@ Transform:
   m_Father: {fileID: 62997696657395154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8402565248758199417
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402565248757955072}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 9100000, guid: 85e5778df199bee47b6e5c3ab2dfa438, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8402565248757958182
 GameObject:
   m_ObjectHideFlags: 0
