@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using System;
-using RPG.Combat;
 using RPG.Core;
 
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour
+    public class Mover : MonoBehaviour, IAction
     {
 
         [SerializeField] private Animator _animator;
@@ -36,7 +35,7 @@ namespace RPG.Movement
         }
 
 
-        public void Stop()
+        public void Cancel()
         {
 
             _agent.isStopped = true;
@@ -46,7 +45,6 @@ namespace RPG.Movement
         public void StartMoveAction(Vector3 point)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            GetComponent<Fighter>().Cancel();
             MoveTo(point);
         }
         public void MoveTo(Vector3 point)
@@ -55,6 +53,8 @@ namespace RPG.Movement
             _agent.SetDestination(point);
             _agent.isStopped = false;
         }
+
+        
     }
 
 }
