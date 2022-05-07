@@ -3217,7 +3217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebc62e32ae8e84409ebf573af23151d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  healthPoints: 100
 --- !u!1001 &1702411029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3580,6 +3580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.9305074
+      objectReference: {fileID: 0}
+    - target: {fileID: -3715059704836679143, guid: 5f32cf2864e708b4ca169937a9f2886b,
+        type: 3}
+      propertyPath: healthPoints
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7822764806110681674, guid: 5f32cf2864e708b4ca169937a9f2886b,
         type: 3}
