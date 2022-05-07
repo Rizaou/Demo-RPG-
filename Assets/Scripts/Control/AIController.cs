@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Combat;
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Controller
@@ -11,25 +12,28 @@ namespace RPG.Controller
 
         private Fighter fighter;
         private GameObject player;
+        private Health health;
 
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             player = GameObject.FindWithTag("Player");
+            health = GetComponent<Health>();
         }
         private void Update()
         {
 
+            if (health.IsDead) { return; }
 
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
                 fighter.Attack(player);
-                Debug.Log("Chase");
+
             }
             else
             {
                 fighter.Cancel();
-                Debug.Log("Stop");
+
             }
 
         }
@@ -38,7 +42,7 @@ namespace RPG.Controller
         {
 
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-            return distanceToPlayer <= chaseDistance ;
+            return distanceToPlayer <= chaseDistance;
         }
     }
 }
