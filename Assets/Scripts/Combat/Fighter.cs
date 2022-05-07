@@ -13,7 +13,7 @@ namespace RPG.Combat
         [SerializeField] private float timeBetweenAttacks = 2f;
         [SerializeField] private float weaponDamage = 5f;
         Health target;
-        float timeSinceLastAttack = 0f;
+        float timeSinceLastAttack = 2f;
 
         private void Update()
         {
@@ -42,19 +42,35 @@ namespace RPG.Combat
         private void AttackBehaviour()
         {
 
+
             transform.LookAt(target.transform);
 
             if (timeSinceLastAttack >= timeBetweenAttacks)
             {
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0f;
             }
 
         }
 
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
         private bool GetIsInRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+        }
+
+        public bool CanAttack(CombatTarget target)
+        {
+            if (target == null) { return false; }
+
+            Health targetToTest = target.GetComponent<Health>();
+
+            return targetToTest != null && !targetToTest.IsDead;
         }
 
         public void Attack(CombatTarget target)
@@ -70,6 +86,7 @@ namespace RPG.Combat
         public void Hit()
         {
 
+            if (target == null) { return; }
             target?.TakeDamage(weaponDamage);
 
         }
@@ -77,7 +94,13 @@ namespace RPG.Combat
 
         public void Cancel()
         {
+            StopAttack();
             target = null;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
     }
