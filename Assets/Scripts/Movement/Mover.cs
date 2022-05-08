@@ -16,6 +16,7 @@ namespace RPG.Movement
         private NavMeshAgent _agent;
         private Ray _lastRay;
         private Health health;
+        private float maxSpeed = 5f;
 
         private void Start()
         {
@@ -41,19 +42,22 @@ namespace RPG.Movement
         {
             GetComponent<ActionScheduler>().CancelCurrentAction();
 
-            _agent!.isStopped = true;
+            if (_agent.enabled)
+                _agent!.isStopped = true;
 
 
         }
 
-        public void StartMoveAction(Vector3 point)
+        public void StartMoveAction(Vector3 point, float speedFraction)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            MoveTo(point);
+            MoveTo(point, speedFraction);
         }
-        public void MoveTo(Vector3 point)
+        public void MoveTo(Vector3 point, float speedFraction)
         {
-            _agent.ResetPath();
+            if (_agent.enabled == false) { return; }
+
+            _agent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             _agent.SetDestination(point);
             _agent.isStopped = false;
         }

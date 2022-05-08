@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Combat
 {
@@ -15,6 +16,7 @@ namespace RPG.Combat
         Health target;
         float timeSinceLastAttack = 2f;
 
+
         private void Update()
         {
 
@@ -24,11 +26,13 @@ namespace RPG.Combat
 
             if (target.IsDead) { return; }
 
+            if (!GetComponent<NavMeshAgent>()) { return; }
+
 
 
             if (!GetIsInRange())
             {
-                GetComponent<Mover>().MoveTo(target.transform.position);
+                GetComponent<Mover>().MoveTo(target.transform.position,1f);
             }
             else
             {

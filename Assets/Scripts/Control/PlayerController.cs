@@ -61,7 +61,7 @@ namespace RPG.Controller
             {
                 if (Input.GetMouseButton(0))
                 {
-                    gameObject.GetComponent<Mover>().StartMoveAction(hit.point);
+                    gameObject.GetComponent<Mover>().StartMoveAction(hit.point, 1f);
 
                 }
 
