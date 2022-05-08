@@ -15,15 +15,17 @@ namespace RPG.Movement
 
         private NavMeshAgent _agent;
         private Ray _lastRay;
+        private Health health;
 
         private void Start()
         {
+            health = GetComponent<Health>();
             _agent = GetComponent<NavMeshAgent>();
         }
 
         private void Update()
         {
-
+            _agent.enabled = !health.IsDead;
             HandleAnimation();
         }
 
@@ -37,9 +39,11 @@ namespace RPG.Movement
 
         public void Cancel()
         {
+            GetComponent<ActionScheduler>().CancelCurrentAction();
 
-            _agent.isStopped = true;
-            _agent.ResetPath();
+            _agent!.isStopped = true;
+
+
         }
 
         public void StartMoveAction(Vector3 point)
@@ -54,7 +58,7 @@ namespace RPG.Movement
             _agent.isStopped = false;
         }
 
-        
+
     }
 
 }
