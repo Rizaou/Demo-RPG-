@@ -96,7 +96,7 @@ namespace RPG.Combat
         {
             StopAttack();
             target = null;
-             GetComponent<ActionScheduler>().CancelCurrentAction();
+            GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
         private void StopAttack()
