@@ -59,16 +59,16 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.48333333333333334
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 6613456835228348706}
-    m_Duration: 5
+    m_Duration: 1.6
     m_TimeScale: 1
     m_ParentTrack: {fileID: 952018572218786971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.5333333333333332
+    m_BlendOutDuration: 1.0166666666666666
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -128,16 +128,16 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Follow Camera
   - m_Version: 1
-    m_Start: 3.95
+    m_Start: 0.5833333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -7711988876312033084}
-    m_Duration: 5
+    m_Duration: 4.416666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: 952018572218786971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.5333333333333332
-    m_BlendOutDuration: 1.0666666666666655
+    m_BlendInDuration: 1.0166666666666666
+    m_BlendOutDuration: 1.0666666666666682
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -197,7 +197,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM Reveal
   - m_Version: 1
-    m_Start: 7.883333333333334
+    m_Start: 3.933333333333332
     m_ClipIn: 0
     m_Asset: {fileID: 4072917886591023568}
     m_Duration: 5
@@ -205,7 +205,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 952018572218786971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.0666666666666655
+    m_BlendInDuration: 1.0666666666666682
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
